@@ -20,6 +20,6 @@
     "browserify": "^16.5.0",
     "crypto-browserify": "^3.12.0",
     "ethers": "^4.0.43",
-    "web3": "0.19.0"
+    "web3": "^1.2.2"
   }
 }
