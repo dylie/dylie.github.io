@@ -1,0 +1,25 @@
+{
+  "name": "dylie.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "browserify index.js > bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylie/dylie.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylie/dylie.github.io/issues"
+  },
+  "homepage": "https://github.com/dylie/dylie.github.io#readme",
+  "dependencies": {
+    "browserify": "^16.5.0",
+    "crypto-browserify": "^3.12.0",
+    "ethers": "^4.0.43",
+    "web3": "^1.2.2"
+  }
+}
