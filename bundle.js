@@ -2,11 +2,15 @@
 const Web3 = require('web3');
 const ethers = require('ethers');
 var provider;
-if (typeof provider !== 'undefined') {
-  provider = new Web3(Web3.currentProvider);
+if (typeof web3 !== 'undefined') {
+    web3 = new Web3(web3.currentProvider);
 } else {
-  console.log('No web3? You should consider trying MetaMask!');
-  provider = new Web3('https://rpc.ether1.org');
+    // set the provider you want from Web3.providers
+    web3 = new Web3(new Web3.providers.HttpProvider("https://rpc.ether1.org/"));   
+    if(!web3.isConnected())
+        console.log("not connected");
+    else
+        console.log("connected");
 }
 
 abi = JSON.parse('[{"constant":true,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"validCandidate","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"candidateList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"voteForCandidate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"votesTracking","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"candidateNames","type":"bytes32[]"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]')
